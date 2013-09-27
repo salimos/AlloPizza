@@ -1,0 +1,31 @@
+#	Gitignore via le repo officiel de blackberry :3
+#	https://github.com/blackberry/Cascades-Samples/blob/master/.gitignore 
+
+
+
+# MAC OSX
+*.DS_Store
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+ 
+# Compiled Dynamic libraries
+*.so
+ 
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Compiled Translations
+translations/*.qm
+ 
+.settings/
+arm/
+x86/
+.metadata/*
+.metadata/
+
+config.pri
