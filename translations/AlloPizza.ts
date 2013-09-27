@@ -4,13 +4,23 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="35"/>
         <source>Allo pizza</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="46"/>
         <source>Say Hello</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pizzas</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sandiwshs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>boissons</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
