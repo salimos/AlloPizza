@@ -1,5 +1,11 @@
 import bb.cascades 1.0
 
+
+NavigationPane {
+    id: navigationPane
+
+
+
 Page {
     Container {
         layout: DockLayout {
@@ -42,6 +48,12 @@ Page {
                 id: nom
                 hintText: "entre votre nom..."
             }
+            ActivityIndicator {
+                id: indicator
+                visible: false
+                //verticalAlignment: VerticalAlignment.Fill
+                //horizontalAlignment: HorizontalAlignment.Fill
+            }
             Button {  
                 id:btn              
                 text: qsTr("Say Hello")
@@ -52,37 +64,71 @@ Page {
                     tof.setVisible(true)  
                     btn.setVisible(false)
                     rotateAnimation.play();
-                    footer.setVisible(true)
+                    indicator.setVisible(true)
                 }
             
             }
-        
-        }
-    
-    
-    	Container {
-    	    id:footer
-    	    visible: false
-         layout: StackLayout {
-             orientation: LayoutOrientation.LeftToRight
-         }
-         verticalAlignment: VerticalAlignment.Bottom
-         	Button {
-         	    id: pizza
-                text: qsTr("Pizzas")
-                onClicked: {
-                    
-                }
-            }
-            Button {
-                text: qsTr("sandiwshs")
-            }
-            Button {
-                text: qsTr("boissons")
-            }
+
 
         }
     }
+    
+    /*attachedObjects: ComponentDefinition {
+        id:PagePizza
+        source: "pizzas.qml"
+    }
+    onclick: {
+        var page=PagePizza.createObject()
+        navigationPage.push(page)
+    }*/
+    
+    
+    
+    
+    
+    actions: [
+        ActionItem {
+            title: "Pizzas"
+            imageSource: "images/pizza.jpg"
+            onTriggered: {
+                var page=pagePizza.createObject()
+                navigationPane.push(page)                
+            }
+            attachedObjects: ComponentDefinition {
+                id:pagePizza
+                source: "Pizzas.qml"
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            title: "Boissons"
+            onTriggered: {
+                var page=pageBoisson.createObject()
+                navigationPane.push(page)                
+            }
+            attachedObjects: ComponentDefinition {
+                id:pageBoisson
+                source: "boissons.qml"
+            }
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            title: "Sandwichs"
+            onTriggered: indicator.start()
+            ActionBar.placement: ActionBarPlacement.OnBar
+        },
+        ActionItem {
+            title: "Desserts"
+            onTriggered: indicator.start()
+            ActionBar.placement: ActionBarPlacement.InOverflow
+        },
+        ActionItem {
+            title: "Suppléments"
+            onTriggered: indicator.start()
+            ActionBar.placement: ActionBarPlacement.InOverflow
+        }
+    ]
+}
 
 }
 

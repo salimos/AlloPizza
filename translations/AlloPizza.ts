@@ -11,17 +11,5 @@
         <source>Say Hello</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Pizzas</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sandiwshs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>boissons</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 </TS>
